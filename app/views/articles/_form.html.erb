@@ -20,11 +20,13 @@
         <div class="form-group mb-3 row">
           <%= f.label :category, class: "col-2 col-form-label text-light" %>
           <div class="col-10">
-            <%= f.collection_select(:category_ids, Category.all, :id, :name) %>
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, 
+            { prompt: "Make your selection from the list below (can be empty)"}, 
+            { size: 3, multiple: true, class: "form-select shadow rounded" }) %>
           </div>
         </div>
 
-        <div class="form-group d-flex justify-content-center mb-3">
+        <div class="form-group d-flex justify-content-center mb-3 ">
           <%= f.submit class: "btn btn-outline-light btn-lg" %>
         </div>
         </div>
